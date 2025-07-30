@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Geografia</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top left, #073b3a, #000000);
+      min-height: 100vh;
+    }
+    .card {
+      width: 300px;
+      height: 160px;
+      background-color: #0b0f1a;
+      border: 1px solid #1e90ff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      position: relative;
+      padding: 20px;
+      transition: all 0.3s ease-in-out;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: 0 0 10px #1e90ff;
+    }
+    .question, .answer {
+      font-size: 16px;
+      text-align: center;
+    }
+    .question {
+      color: #ccc;
+    }
+    .tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: transparent;
+      border: 1px solid #ccc;
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+    .card.active {
+      border: 1px solid #00ffcc;
+    }
+    .card.active .question {
+      display: none;
+    }
+    .card .answer {
+      display: none;
+      color: #00ffcc;
+      font-weight: bold;
+    }
+    .card.active .answer {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" onclick="showAnswer(this)">
+    <div class="tag">Geografia</div>
+    <div class="question"><b>Qual é a cidade mais importante da França politicamente?</b></div>
+    <div class="answer">Paris.</div>
+  </div>
+
+  <div class="card" onclick="showAnswer(this)">
+    <div class="tag">Geografia</div>
+    <div class="question">Nome da capital da França?</div>
+    <div class="answer">A capital da França é Paris.</div>
+  </div>
+
+  <div class="card" onclick="showAnswer(this)">
+    <div class="tag">Geografia</div>
+    <div class="question">Sede do governo francês?</div>
+    <div class="answer">Paris.</div>
+  </div>
+
+  <script>
+    function showAnswer(card) {
+      card.classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
